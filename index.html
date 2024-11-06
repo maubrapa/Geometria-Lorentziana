@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<!-- <link rel="stylesheet" href="dist/theme/black.css"> -->
+		<link rel="stylesheet" href="dist/theme/white-contrast.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<!-- Custom stylesheet -->
+		<link rel="stylesheet" href="dist/custom.css">
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="./imgs/bckgnd3.png">
+					<p>Geometria Lorentziana: a falha da Matrix</p>
+					<br>
+					<p><small>Giovanni da Silva Nunes$^\dagger$ &nbsp;&nbsp; e &nbsp;&nbsp; Maurício Braga de Paula$^\dagger$</small></p>
+					<p style="font-size: medium;">
+						$^\dagger$Mathematics and Statistics Department, Federal University of Pelotas<br>
+    					<!-- $^\dagger$Institute of Informatics, Federal University of Rio Grande do Sul -->
+					<p style="margin-bottom: 4cm;"></p>
+					<hr>
+					<div class="twocolumn">
+						<div><img src="./imgs/logo_IFM.png" alt="SIBGRAPI 2023 logo" style="height: 65px; background: transparent;"></div>
+						<div><img src="./imgs/logos_UFPEL_DME.svg" alt="UFPEL and DME logo" style="height: 70px; background: transparent;"></div>
+					</div>					
+				</section>
+				<section data-state="my-style">
+					<h4>Sumário</h4>
+					<ul class="myli">
+						<li>Motivação</li>
+						<li>...</li>
+						<li>...</li>
+						<li>...</li>
+						<li>...</li>
+						<li>Conclusão e Reflexão</li>
+					</ul>
+				</section>
+				<section data-state="my-style">
+					<h4>Título do slide</h4>
+					<p>
+					<b>Definição</b>: Seja \( \mathbf{V} \) um espaço vetorial real. Um produto interno sobre \( \mathbf{V} \) é uma função que a cada par de vetores \( v_1 \) e \( v_2 \) 
+					associa um número real, denotado por \( < v1, v2 > \) satisfazendo as seguintes propriedades:
+					</p>
+					
+ 					<ol>
+						<li> \( < v, v >  \quad \geqslant 0 \quad \forall v \quad \text{e}  < v, v > = 0 \Leftrightarrow v = \vec{0}\) </li>
+						<li>\( < \alpha v_1, v_2 > =  \alpha <  v_1, v_2 > \forall \alpha \in \R  \)</li>
+						<li>\( < v_1, v_2 + v_3 > ~=~ < v_1, v_2 > + < v_1, v_3 >\) </li>
+						<li>\( < v_1, v_2 > ~=~ < v_2, v_1 >\) </li>
+					</ol>
+
+					<p><u>Exemplo</u>: Produto usual do \( \R^3, ~ (\R^n) \) </p>
+
+					<p>Onde usamos: <br>
+					\( \alpha: I \to \R^3\) uma curva \( \alpha(t) = (x(t), y(t), z(t))\)<br>
+					Comprimento de \( t_0 \) a \( t_1 = \int_{t_0}^{t_1} |\alpha \prime (t) ~ dt | \)   
+					</p>
+				</section>
+				<!-- ################################################## -->
+				<section>
+					<section data-state="my-style">
+						<h4>Lanterna - Trem (cena interna)</h4>
+						<figure>
+							<img src="./imgs/homem_lanterna_interno_trem.png" alt="Height and lateral location of sign in rural area" style="width: 440px; background: transparent;">
+							<figcaption>Fig. 1. A imagem retrata o interior de um vagão de trem em movimento, onde uma pessoa está posicionada no centro, segurando uma lanterna apontada para o teto. O feixe de luz é direcionado ao espelho no teto, que reflete o brilho da lanterna, destacando o efeito de iluminação dentro do ambiente. </figcaption>
+						</figure>						
+					</section>
+					<section data-state="my-style">
+						<h4>Lanterna - Trem (cena externa 1)</h4>
+						<figure>
+							<img src="./imgs/animacao_trem_lupa_lanterna.png" alt="Height and lateral location of sign in rural area" style="width: 800px; background: transparent;">
+							<figcaption>Fig. 2. Lateral do vagão de trem visto por um observador externo enquanto o trem passa. Através da janela, é possível ver uma pessoa segurando a lanterna acesa, cujo feixe de luz deixa um rastro que acompanha o movimento do trem. O feixe atinge o espelho no teto do vagão, refletindo a luz de volta, criando uma dinâmica de luz que reforça a sensação de movimento na cena. </figcaption>
+						</figure>
+					</section>
+					<section data-state="my-style">
+						<h4>Lanterna - Trem (cena externa 1)</h4>
+						<p>
+							<br><br>
+						</p>
+						<video controls width="100%">
+ 						<!-- <video autoplay="true"> -->
+							<source src="videos/animacao_trem.webm" type="video/mp4" />
+						</video>
+						<figcaption>Fig. 3. O feixe atinge o espelho no teto do vagão, refletindo a luz de volta, criando uma dinâmica de luz que reforça a sensação de movimento na cena. </figcaption>
+					</section>
+					<section data-state="my-style">
+						<h4>Lanterna - Trem (cena externa 2)</h4>
+						<video controls width="100%">
+ 						<!-- <video autoplay="true"> -->
+							<source src="videos/animacao_trem_2.webm" type="video/mp4" />
+						</video>
+						<figcaption>Fig. 4. A imagem mostra os dois vagões de trem, sendo o vagão inferior mais rápido que o superior. Cada vagão contém uma pessoa segurando uma lanterna acesa, cujo feixe de luz é representado por uma linha pontilhada que reflete no teto do vagão. No vagão superior, o feixe de luz, marcado em amarelo, apresenta um rastro mais curto devido à velocidade menor. No vagão inferior, o feixe de luz azul aparece com um rastro mais alongado, destacando o efeito do movimento mais rápido sobre a trajetória da luz. </figcaption>
+					</section>
+					<section data-state="my-style">
+						<h4>Lanterna - Trem (comparação)</h4>
+						<figure>
+							<img src="./imgs/animacao_trem_3.png" alt="Height and lateral location of sign in rural area" style="width: 800px; background: transparent;">
+							<figcaption>Fig. 5.</figcaption>
+						</figure>
+					</section>
+					<section data-state="my-style" data-transition="convex">
+						<h4>Lanterna - Trem (se o h é o mesmo...)</h4>
+						<div class="twocolumn">
+							<div>								
+								<figure>
+									<img src="./imgs/animacao_trem_32.png" alt="Height and lateral location of sign in rural area" style="width: 800px; background: transparent;">
+									<!-- <figcaption>Fig. 6. </figcaption> -->
+								</figure>
+								<p style="font-size:1vw;">
+									Fig. 6. A imagem apresenta dois triângulos retângulos, um em laranja e outro em roxo, que representam diferentes relações entre variáveis espaciais e temporais. Em cada triângulo, as hipotenusas estão associadas ao termo \( c \cdot \Delta_t \) (no caso laranja) e \( c \cdot \Delta_t' \) (no caso roxo), enquanto as bases representam \( \Delta_x \) e \( \Delta_x' \). Essas relações sugerem uma transformação que preserva a diferença entre os quadrados dos componentes temporais e espaciais.
+								</p>
+							</div>
+							<div>
+								<p style="font-size:2vw;">
+								\[\begin{aligned}
+									h^2+(\Delta_x)^2 &= (c \cdot \Delta_t)^2\\
+									h^2+(\Delta_x\prime)^2 &= (c \cdot \Delta_t\prime)^2\\
+									\Downarrow \\
+									(c \cdot \Delta_t)^2 - (\Delta_x)^2 &= (c \cdot \Delta_t\prime)^2 - (\Delta_x\prime)^2
+								\end{aligned} \]
+								</p>
+								<p style="font-size:1vw">
+									Esse conceito nos leva a um tipo de métrica diferente, em que, ao invés de somarmos os quadrados das coordenadas (como no módulo de um vetor em métricas tradicionais), consideramos a diferença entre os quadrados dos componentes. Isso é uma motivação para o <b>produto de Minkowski</b>, onde, ao invés de um produto interno padrão \((x_1, y_1) \cdot (x_2, y_2) = x_1 x_2 + y_1 y_2\), definimos o produto por:
+
+									\[
+									(x_1, y_1) \cdot (x_2, y_2) = x_1 x_2 - y_1 y_2
+									\]
+
+									Esse produto é útil em relatividade, pois preserva o valor da diferença dos quadrados das coordenadas, mas, ao mesmo tempo, falha em algumas propriedades do produto interno tradicional, destacando a diferença fundamental entre as métricas euclidiana e de Minkowski.
+							</p>
+							</div>
+
+					</section>					
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+				autoPlayMedia: true,
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					inlineMath: [
+					    ['$', '$'],
+					    ['\\(', '\\)'],
+					  ],
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
