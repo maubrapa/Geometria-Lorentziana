@@ -31,6 +31,14 @@ para usar os estilos redefinidos
   text-align: left; 
 }
 
+.my-style ul {
+/*  background: gray;*/
+  display: grid;
+/*  list-style: none;*/
+  gap: 20px;
+/*  padding: 2em;*/
+}
+
 /*----------------------------*/
 
 .footnote {
@@ -45,10 +53,19 @@ ol li {
   list-style-type: lower-roman;
 }
 
+/*ul {
+  background: silver;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}*/
+
+
 .myli {
   font-size: 65%;
   text-align: left; 
 }
+
 
 .twocolumn {
   display: grid;

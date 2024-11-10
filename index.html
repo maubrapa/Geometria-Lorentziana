@@ -22,11 +22,11 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background="./imgs/bckgnd3.png">
-					<p>Geometria Lorentziana: a falha da Matrix</p>
+					<p>Relativando a Geometria</p>
 					<br>
 					<p><small>Giovanni da Silva Nunes$^\dagger$ &nbsp;&nbsp; e &nbsp;&nbsp; Maurício Braga de Paula$^\dagger$</small></p>
 					<p style="font-size: medium;">
-						$^\dagger$Mathematics and Statistics Department, Federal University of Pelotas<br>
+						$^\dagger$Departamento de Matemática e Estatística<br>
     					<!-- $^\dagger$Institute of Informatics, Federal University of Rio Grande do Sul -->
 					<p style="margin-bottom: 4cm;"></p>
 					<hr>
@@ -38,53 +38,139 @@
 				<section data-state="my-style">
 					<h4>Sumário</h4>
 					<ul class="myli">
+						<li>Multiplicação de vetores no \( \R^2 \)</li>
+						<li>Módulo de um vetor</li>
+						<li>Transformações que preservam o módulo</li>
+						<li>O que é um produto interno?</li>
 						<li>Motivação</li>
-						<li>...</li>
-						<li>...</li>
-						<li>...</li>
 						<li>...</li>
 						<li>Conclusão e Reflexão</li>
 					</ul>
 				</section>
 				<section data-state="my-style">
-					<h4>Título do slide</h4>
-					<p>
-					<b>Definição</b>: Seja \( \mathbf{V} \) um espaço vetorial real. Um produto interno sobre \( \mathbf{V} \) é uma função que a cada par de vetores \( v_1 \) e \( v_2 \) 
-					associa um número real, denotado por \( < v1, v2 > \) satisfazendo as seguintes propriedades:
+					<h4>Multiplicação de vetores no \( \R^2 \)</h4>
+					<br>
+					<p>Chamamos de <b>produto escalar</b> ou <b>produto interno usual</b> de dois vetores \( u = (x_1,y_1) \) e \( v = (x_2,y_2) \) ao número real 
+					\[\color{blue}{ \langle u, v \rangle = x_1 x_2 + y_1 y_2 } \]
 					</p>
-					
- 					<ol>
-						<li> \( < v, v >  \quad \geqslant 0 \quad \forall v \quad \text{e}  < v, v > = 0 \Leftrightarrow v = \vec{0}\) </li>
-						<li>\( < \alpha v_1, v_2 > =  \alpha <  v_1, v_2 > \forall \alpha \in \R  \)</li>
-						<li>\( < v_1, v_2 + v_3 > ~=~ < v_1, v_2 > + < v_1, v_3 >\) </li>
-						<li>\( < v_1, v_2 > ~=~ < v_2, v_1 >\) </li>
-					</ol>
-
-					<p><u>Exemplo</u>: Produto usual do \( \R^3, ~ (\R^n) \) </p>
-
-					<p>Onde usamos: <br>
-					\( \alpha: I \to \R^3\) uma curva \( \alpha(t) = (x(t), y(t), z(t))\)<br>
-					Comprimento de \( t_0 \) a \( t_1 = \int_{t_0}^{t_1} |\alpha \prime (t) ~ dt | \)   
-					</p>
+				</section>
+				<section data-state="my-style">
+					<h4>Módulo de um vetor</h4>
+					<p style="font-size:1vw; text-align: center;">(distância entre dois pontos)</p>
+					<p>O módulo de um vetor \( v=(x,y) \), representado por \( |v| \), é o número real não negativo
+					\[ \color{blue}{\lVert v \rVert =\sqrt{\langle v,v \rangle} = \sqrt{x^2+y^2}} \]</p>
 				</section>
 				<!-- ################################################## -->
 				<section>
 					<section data-state="my-style">
-						<h4>Lanterna - Trem (cena interna)</h4>
+						<h4>Transformações que preservam o módulo</h4>
+						<p style="font-size:1vw; text-align: center;">(rotação)</p>
+						<div class="twocolumn">
+							<div>
+						<ul class="myli">
+							<li>A <b>rotação</b> é uma transformação linear que preserva a magnitude do vetor.</li>
+							<li>Seja o vetor \( v=(x,y) \) e a rotação no plano por um ângulo \( \theta \).</li>
+							<li>O novo vetor é \( v'=(x',y') \), dado por:
+								\( \color{blue}{
+								\begin{bmatrix}
+								x'\\
+								y'
+								\end{bmatrix}
+								=
+								\begin{bmatrix}
+								\cos \theta & -\text{ sen } \theta\\
+								\text{ sen } \theta & \cos \theta
+								\end{bmatrix}
+								\begin{bmatrix}
+								x\\
+								y
+								\end{bmatrix}
+								} \)
+							</li>
+							<li>Demonstrar a preservação do módulo significa mostrar que \( \lVert v \rVert = \lVert v\prime \rVert \).</li>
+						</ul>
+						</div>
+						<div class="fragment">
+							<video controls width="70%" loop="True">
+	 						<!-- <video autoplay="true"> -->
+								<source src="videos/rotacao.webm" type="video/mp4" />
+							</video>
+						</div>
+					</div>	
+					</section>					
+					<section data-state="my-style">
+						<h4>Transformações que preservam o módulo</h4>
+						<p style="font-size:1vw; text-align: center;">(rotação)</p>
+						<ul class="myli">
+						<li>Módulo do vetor original \( v \): &nbsp;&nbsp;
+						   \(
+						   \lVert v \rVert = \sqrt{x^2 + y^2}
+							
+						   \)
+						</li>
+
+						<li>Rotação do vetor \( v \): &nbsp;&nbsp;
+						   \(
+						   v' = (x \cos \theta - y \text{ sen } \theta, x \text{ sen } \theta + y \cos \theta) 
+						   \)
+						</li>
+						<li>Módulo do vetor rotacionado \( v' \)</li>
+						   \(
+							\begin{aligned}
+							\lVert v' \rVert &= \sqrt{(x \cos \theta - y \text{ sen } \theta)^2 + (x \text{ sen } \theta + y \cos \theta)^2}\\
+							&= \sqrt{x^2 \cos^2 \theta - 2xy \cos \theta \text{ sen } \theta + y^2 \text{ sen }^2 \theta + x^2 \text{ sen }^2 \theta + 2xy \text{ sen } \theta \cos \theta + y^2 \cos^2 \theta}\\
+							&= \sqrt{x^2 (\cos^2 \theta + \text{ sen }^2 \theta) + y^2 (\text{ sen }^2 \theta + \cos^2 \theta)}\\
+							&= \sqrt{x^2 \cdot 1 + y^2 \cdot 1}\\
+							&= \sqrt{x^2 + y^2}
+							\end{aligned}
+						   \)
+						</li>
+						<li>Portanto, \( \lVert v \rVert = \lVert v' \rVert \) </li>
+						</ul>
+					</section>	
+				</section>	
+				<section data-state="my-style">
+					<h4>O que é um produto interno?</h4>
+					<p>
+					<b>Definição</b>: Seja \( \mathbf{V} \) um espaço vetorial real. Um produto interno sobre \( \mathbf{V} \) é uma função que a cada par de vetores \( v_1 \) e \( v_2 \) 
+					associa um número real, denotado por \( \langle v1, v2 \rangle \) satisfazendo as seguintes propriedades:
+					</p>
+					
+ 					<ol>
+						<li> \( \langle v, v \rangle  \geqslant 0 \quad \forall v \quad \text{e} \quad \langle v, v \rangle = 0 \Leftrightarrow v = \vec{0}\) </li>
+						<li>\( \langle \alpha v_1, v_2 \rangle =  \alpha \langle  v_1, v_2 \rangle \quad \forall \alpha \in \R  \)</li>
+						<li>\( \langle v_1, v_2 + v_3 \rangle ~=~ \langle v_1, v_2 > + < v_1, v_3 \rangle \) </li>
+						<li>\( \langle v_1, v_2 \rangle ~=~ \langle v_2, v_1 \rangle \) </li>
+					</ol>
+
+					<p><u>Exemplo</u><br>
+						Seja \( v_1=(x_1,y_1) ~\) e \( ~ v_1=(x_2,y_2) \)
+						\( \langle v_1,v_2 \rangle = 2x_1x_2-x_1y_2-x_2y_1+y_1y_2\)
+ 					</p>
+<!-- 
+					<p>Onde usamos: <br>
+					\( \alpha: I \to \R^3\) uma curva \( \alpha(t) = (x(t), y(t), z(t))\)<br>
+					Comprimento de \( t_0 \) a \( t_1 = \int_{t_0}^{t_1} |\alpha \prime (t) ~ dt | \)   
+					</p> -->
+				</section>
+				<!-- ################################################## -->
+				<section>
+					<section data-state="my-style">
+						<h4>Motivação para um produto \( \mathbb{L}^2\)</h4>
 						<figure>
 							<img src="./imgs/homem_lanterna_interno_trem.png" alt="Height and lateral location of sign in rural area" style="width: 440px; background: transparent;">
 							<figcaption>Fig. 1. A imagem retrata o interior de um vagão de trem em movimento, onde uma pessoa está posicionada no centro, segurando uma lanterna apontada para o teto. O feixe de luz é direcionado ao espelho no teto, que reflete o brilho da lanterna, destacando o efeito de iluminação dentro do ambiente. </figcaption>
 						</figure>						
 					</section>
 					<section data-state="my-style">
-						<h4>Lanterna - Trem (cena externa 1)</h4>
+						<h4>Motivação para um produto \( \mathbb{L}^2\)</h4>
 						<figure>
 							<img src="./imgs/animacao_trem_lupa_lanterna.png" alt="Height and lateral location of sign in rural area" style="width: 800px; background: transparent;">
 							<figcaption>Fig. 2. Lateral do vagão de trem visto por um observador externo enquanto o trem passa. Através da janela, é possível ver uma pessoa segurando a lanterna acesa, cujo feixe de luz deixa um rastro que acompanha o movimento do trem. O feixe atinge o espelho no teto do vagão, refletindo a luz de volta, criando uma dinâmica de luz que reforça a sensação de movimento na cena. </figcaption>
 						</figure>
 					</section>
 					<section data-state="my-style">
-						<h4>Lanterna - Trem (cena externa 1)</h4>
+						<h4>Motivação para um produto \( \mathbb{L}^2\)</h4>
 						<p>
 							<br><br>
 						</p>
@@ -95,7 +181,7 @@
 						<figcaption>Fig. 3. O feixe atinge o espelho no teto do vagão, refletindo a luz de volta, criando uma dinâmica de luz que reforça a sensação de movimento na cena. </figcaption>
 					</section>
 					<section data-state="my-style">
-						<h4>Lanterna - Trem (cena externa 2)</h4>
+						<h4>Motivação para um produto \( \mathbb{L}^2\)</h4>
 						<video controls width="100%">
  						<!-- <video autoplay="true"> -->
 							<source src="videos/animacao_trem_2.webm" type="video/mp4" />
@@ -103,45 +189,56 @@
 						<figcaption>Fig. 4. A imagem mostra os dois vagões de trem, sendo o vagão inferior mais rápido que o superior. Cada vagão contém uma pessoa segurando uma lanterna acesa, cujo feixe de luz é representado por uma linha pontilhada que reflete no teto do vagão. No vagão superior, o feixe de luz, marcado em amarelo, apresenta um rastro mais curto devido à velocidade menor. No vagão inferior, o feixe de luz azul aparece com um rastro mais alongado, destacando o efeito do movimento mais rápido sobre a trajetória da luz. </figcaption>
 					</section>
 					<section data-state="my-style">
-						<h4>Lanterna - Trem (comparação)</h4>
+						<h4>Motivação para um produto \( \mathbb{L}^2\)</h4>
 						<figure>
 							<img src="./imgs/animacao_trem_3.png" alt="Height and lateral location of sign in rural area" style="width: 800px; background: transparent;">
-							<figcaption>Fig. 5.</figcaption>
+							<!-- <figcaption>Fig. 5.</figcaption> -->
 						</figure>
 					</section>
 					<section data-state="my-style" data-transition="convex">
-						<h4>Lanterna - Trem (se o h é o mesmo...)</h4>
+						<h4>Motivação para um produto \( \mathbb{L}^2\)</h4>
 						<div class="twocolumn">
 							<div>								
 								<figure>
 									<img src="./imgs/animacao_trem_32.png" alt="Height and lateral location of sign in rural area" style="width: 800px; background: transparent;">
 									<!-- <figcaption>Fig. 6. </figcaption> -->
 								</figure>
-								<p style="font-size:1vw;">
+								<p style="font-size:15px;">
 									Fig. 6. A imagem apresenta dois triângulos retângulos, um em laranja e outro em roxo, que representam diferentes relações entre variáveis espaciais e temporais. Em cada triângulo, as hipotenusas estão associadas ao termo \( c \cdot \Delta_t \) (no caso laranja) e \( c \cdot \Delta_t' \) (no caso roxo), enquanto as bases representam \( \Delta_x \) e \( \Delta_x' \). Essas relações sugerem uma transformação que preserva a diferença entre os quadrados dos componentes temporais e espaciais.
 								</p>
 							</div>
 							<div>
-								<p style="font-size:2vw;">
+								<p style="font-size:20px;">
 								\[\begin{aligned}
 									h^2+(\Delta_x)^2 &= (c \cdot \Delta_t)^2\\
 									h^2+(\Delta_x\prime)^2 &= (c \cdot \Delta_t\prime)^2\\
 									\Downarrow \\
-									(c \cdot \Delta_t)^2 - (\Delta_x)^2 &= (c \cdot \Delta_t\prime)^2 - (\Delta_x\prime)^2
+									(c \cdot \Delta_t)^2 - (\Delta_x)^2 &= (c \cdot \Delta_t\prime)^2 - (\Delta_x\prime)^2\\
+									(\Delta_x)^2 -  (c \cdot \Delta_t)^2 &= (\Delta_x\prime)^2 - (c \cdot \Delta_t\prime)^2\\
+									x^2-y^2 &= x\prime^2 - y\prime^2
 								\end{aligned} \]
 								</p>
-								<p style="font-size:1vw">
+								<p style="font-size:20px">
 									Esse conceito nos leva a um tipo de métrica diferente, em que, ao invés de somarmos os quadrados das coordenadas (como no módulo de um vetor em métricas tradicionais), consideramos a diferença entre os quadrados dos componentes. Isso é uma motivação para o <b>produto de Minkowski</b>, onde, ao invés de um produto interno padrão \((x_1, y_1) \cdot (x_2, y_2) = x_1 x_2 + y_1 y_2\), definimos o produto por:
 
-									\[
+								
+
+									\[\color{blue}{
 									(x_1, y_1) \cdot (x_2, y_2) = x_1 x_2 - y_1 y_2
+									}
 									\]
 
-									Esse produto é útil em relatividade, pois preserva o valor da diferença dos quadrados das coordenadas, mas, ao mesmo tempo, falha em algumas propriedades do produto interno tradicional, destacando a diferença fundamental entre as métricas euclidiana e de Minkowski.
-							</p>
-							</div>
+									</p>
 
-					</section>					
+									<!-- Esse produto é útil em relatividade, pois preserva o valor da diferença dos quadrados das coordenadas, mas, ao mesmo tempo, falha em algumas propriedades do produto interno tradicional, destacando a diferença fundamental entre as métricas euclidiana e de Minkowski. -->							
+							</div>		
+					</section>
+					<section data-state="my-style" data-transition="convex">
+						<h4>Porque não é um produto interno?</h4>
+					</section>
+					<section data-state="my-style" data-transition="convex">
+						<h4>Tipo causal</h4>
+					</section>	
 				</section>
 			</div>
 		</div>
