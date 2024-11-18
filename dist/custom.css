@@ -20,9 +20,20 @@ para usar os estilos redefinidos
 }
 */
 
-.my-style cinza {
+.my-style crimson {
 /*	background-color:#646464;*/
-/*	color: #9966CC;*/
+	color: #DC143C;
+}
+
+.my-style azulgeo {
+/*  background-color:#646464;*/
+  color: #0099FF;
+}
+
+
+.my-style cinza {
+/*  background-color:#646464;*/
+/*  color: #9966CC;*/
   color:gray;
 }
 
